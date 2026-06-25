@@ -1,0 +1,20 @@
+:root {
+  --bg-dark: #0f172a;
+  --primary-blue: #0052ff;
+  --accent-cyan: #00f0ff;
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-white);
+  line-height: 1.6;
+}

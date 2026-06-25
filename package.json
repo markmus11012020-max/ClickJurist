@@ -1,0 +1,25 @@
+{
+  "name": "clickjurist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CLICK JURIST — экосистема анонимной юридической помощи",
+  "workspaces": [
+    "shared",
+    "backend",
+    "mobile",
+    "landing"
+  ],
+  "scripts": {
+    "backend": "npm run dev --workspace=backend",
+    "mobile": "npm run start --workspace=mobile",
+    "landing": "npm run dev --workspace=landing",
+    "build:shared": "npm run build --workspace=shared",
+    "build:landing": "npm run build --workspace=landing",
+    "build:backend": "npm run build --workspace=backend",
+    "build:all": "npm run build:shared && npm run build:backend && npm run build:landing",
+    "check:env": "node scripts/check-env.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

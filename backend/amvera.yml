@@ -1,0 +1,17 @@
+# Конфигурация деплоя на Amvera — https://amvera.ru
+# Загрузите репозиторий или подключите Git, укажите backend/ как корень сборки
+
+meta:
+  environment: node
+  toolchain:
+    name: npm
+    version: 20
+
+build:
+  path: ..
+  additionalCommands: npm run build --workspace=shared && npm run build --workspace=backend
+
+run:
+  path: backend
+  command: node dist/index.js
+  containerPort: 3001

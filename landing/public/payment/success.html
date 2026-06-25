@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Оплата прошла — CLICK JURIST</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0F172A; color: #fff; font-family: Inter, system-ui, sans-serif; text-align: center; padding: 24px; }
+    h1 { color: #00F0FF; font-size: 1.5rem; }
+    p { color: #94A3B8; max-width: 400px; line-height: 1.6; margin: 12px auto; }
+    .btn { display: inline-block; margin: 8px; padding: 14px 28px; border-radius: 12px;
+      font-weight: 600; text-decoration: none; }
+    .primary { background: #0052FF; color: #fff; }
+    .secondary { color: #00F0FF; border: 1px solid rgba(0,240,255,0.3); }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Оплата успешна</h1>
+    <p id="hint">Вернитесь в приложение CLICK JURIST — PDF будет доступен для скачивания.</p>
+    <a id="open-app" class="btn primary" href="#">Открыть приложение</a>
+    <p><a class="btn secondary" href="/">На главную</a></p>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const session = params.get('session') || '';
+    const appLink = session
+      ? 'clickjurist://payment-success?session=' + encodeURIComponent(session)
+      : 'clickjurist://';
+    document.getElementById('open-app').href = appLink;
+    if (session) {
+      setTimeout(function () { location.href = appLink; }, 800);
+    }
+  </script>
+</body>
+</html>
