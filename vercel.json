@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "installCommand": "bash ../scripts/vercel-install.sh",
-  "buildCommand": "bash ../scripts/vercel-build.sh",
-  "outputDirectory": "dist",
+  "installCommand": "bash scripts/vercel-install.sh",
+  "buildCommand": "bash scripts/vercel-build.sh",
+  "outputDirectory": "landing/dist",
   "rewrites": [
     { "source": "/payment/(.*)", "destination": "/payment/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
