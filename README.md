@@ -116,9 +116,10 @@ npm run landing
 ### Landing → Vercel (clickjurist.ru)
 
 1. Зарегистрируйтесь на [vercel.com](https://vercel.com)
-2. Import Git-репозитория, root directory — корень monorepo
-3. Vercel подхватит `vercel.json` автоматически
-4. Привяжите домен `clickjurist.ru` в настройках DNS
+2. Import репозитория [ClickJurist](https://github.com/markmus11012020-max/ClickJurist)
+3. **Root Directory:** `landing` (важно!)
+4. Build / Output подхватятся из `landing/vercel.json` автоматически
+5. Привяжите домен `clickjurist.ru`
 
 Альтернатива — **Netlify**: base directory `landing`, build `npm run build`, publish `dist`.
 
