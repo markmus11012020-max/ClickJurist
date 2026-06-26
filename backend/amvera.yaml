@@ -4,5 +4,8 @@ meta:
 
 toolchain: node@20
 
+build:
+  script: cd .. && npm install && npm run build:shared && npm run build:backend
+
 run:
   script: npm start
