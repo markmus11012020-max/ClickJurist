@@ -3,6 +3,9 @@ meta:
   name: npm
   version: 20
 
+requirements:
+  - package.json
+
 build:
   script: cd .. && npm install && npm run build:shared && npm run build:backend
 
