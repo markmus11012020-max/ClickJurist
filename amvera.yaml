@@ -1,8 +1,10 @@
-# Деплой backend на Amvera: Root Directory = backend
-# См. backend/amvera.yaml
+meta:
+  environment: docker
+  toolchain:
+    name: docker
 
 build:
-  dockerfile: backend/Dockerfile
+  dockerfile: Dockerfile
 
 run:
   containerPort: 3001
