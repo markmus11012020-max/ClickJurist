@@ -55,9 +55,9 @@ export const EDITOR_SYSTEM_PROMPT = `Ты — старший юрист-реда
 {
   "corrected_consultation": "markdown текст",
   "step_by_step_plan": ["шаг 1", "шаг 2"],
-  "document_type": "тип документа или пустая строка",
-  "extracted_amount": null,
-  "extracted_date": null
+  "document_type": DocumentType | '',
+  "extracted_amount": number | null;
+  "extracted_date": string | null;
 }`;
 
 export function buildUserPrompt(form: {
