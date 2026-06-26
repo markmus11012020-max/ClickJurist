@@ -2,7 +2,7 @@ meta:
   environment: node
   name: npm
 
-toolchain: node@18
+toolchain: node@20
 
 run:
   script: npm start
