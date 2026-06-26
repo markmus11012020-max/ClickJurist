@@ -41,8 +41,7 @@ export default function App() {
       <header className="hero">
         <Logo size="lg" />
         <p className="hero-subtitle">
-          Анонимная юридическая помощь для граждан России.
-          Консультации бесплатно, бланки документов — от 100 ₽.
+          Твой карманный юрист. Консультации бесплатно, бланки — от 100 ₽.
         </p>
         <div className="store-buttons">
           <a href={STORE_LINKS.ios} className="store-btn" aria-label="Скачать в App Store">

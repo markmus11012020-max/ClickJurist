@@ -78,7 +78,7 @@ export default function HomeScreen() {
             }`}
           >
             <Text className={`font-semibold ${canProceed ? 'text-white' : 'text-brand-muted'}`}>
-              {step === TOTAL_STEPS - 1 ? 'Получить ответ' : 'Далее'}
+              {step === TOTAL_STEPS - 1 ? 'Погнали!' : 'Далее'}
             </Text>
           </Pressable>
         </View>
