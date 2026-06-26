@@ -1,8 +1,7 @@
 meta:
   environment: node
   name: npm
-
-toolchain: node@20
+  version: 20
 
 build:
   script: cd .. && npm install && npm run build:shared && npm run build:backend
