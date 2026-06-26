@@ -1,5 +1,6 @@
 meta:
   environment: node
+  name: npm
 
 toolchain: node@18
 
