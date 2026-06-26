@@ -57,3 +57,24 @@ export const CONSULTATION_GOAL_LABELS: Record<ConsultationGoal, string> = {
   [ConsultationGoal.DOCUMENT]: 'Бланк документа',
   [ConsultationGoal.ACTION_PLAN]: 'План действий',
 };
+
+/** Типы документов для генерации (раздел 7 ТЗ) */
+export enum DocumentType {
+  COURT_ORDER_OBJECTION = 'court_order_objection',
+  TERMINATION_OF_LEASE_NOTICE = 'termination_of_lease_notice',
+  COMPLAINT_TO_HOUSING_INSPECTORATE = 'complaint_to_housing_inspectorate',
+  STATEMENT_OF_CLAIM = 'statement_of_claim',
+  APPLICATION_FOR_DISMISSAL = 'application_for_dismissal',
+  COMPLAINT_TO_RSPOTREBNADZOR = 'complaint_to_rspotrebnadzor',
+  GENERIC_APPLICATION = 'generic_application',
+}
+
+export const DOCUMENT_TYPE_LABELS: Record<DocumentType, string> = {
+  [DocumentType.COURT_ORDER_OBJECTION]: 'Возражение на судебный приказ',
+  [DocumentType.TERMINATION_OF_LEASE_NOTICE]: 'Уведомление о расторжении договора аренды',
+  [DocumentType.COMPLAINT_TO_HOUSING_INSPECTORATE]: 'Жалоба в жилищную инспекцию',
+  [DocumentType.STATEMENT_OF_CLAIM]: 'Исковое заявление',
+  [DocumentType.APPLICATION_FOR_DISMISSAL]: 'Заявление на увольнение',
+  [DocumentType.COMPLAINT_TO_RSPOTREBNADZOR]: 'Жалоба в Роспотребнадзор',
+  [DocumentType.GENERIC_APPLICATION]: 'Заявление',
+};

@@ -1,6 +1,7 @@
 import {
   AGE_GROUP_LABELS,
   ConsultationResponse,
+  DocumentType,
   USER_ROLE_LABELS,
   WizardFormData,
 } from '@clickjurist/shared';
@@ -22,7 +23,7 @@ interface GeneratorOutput {
 interface EditorOutput {
   corrected_consultation: string;
   step_by_step_plan: string[];
-  document_type: string;
+  document_type: DocumentType | '';
   extracted_amount: number | null;
   extracted_date: string | null;
 }
@@ -45,7 +46,7 @@ function buildFallbackResponse(
     },
     step_by_step_plan: [],
     document_data: {
-      document_type: '',
+      document_type: '', // Fallback to an empty string since we don't have a specific type
       extracted_fields: { amount: null, date: null },
     },
     clarification_request: {
@@ -90,7 +91,7 @@ export async function runAiCascade(
       },
       step_by_step_plan: [],
       document_data: {
-        document_type: '',
+        document_type: '', // Fallback to an empty string
         extracted_fields: { amount: null, date: null },
       },
       clarification_request: {
@@ -133,7 +134,7 @@ export async function runAiCascade(
     },
     step_by_step_plan: editor.step_by_step_plan || [],
     document_data: {
-      document_type: editor.document_type || '',
+      document_type: editor.document_type,
       extracted_fields: {
         amount: editor.extracted_amount,
         date: editor.extracted_date,

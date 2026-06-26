@@ -22,9 +22,11 @@ export interface ClarificationRequest {
   question: string | null;
 }
 
+import { DocumentType } from './enums';
+
 /** Данные для генерации PDF */
 export interface DocumentData {
-  document_type: string;
+  document_type: DocumentType | '';
   extracted_fields: {
     amount: number | null;
     date: string | null;
