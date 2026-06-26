@@ -129,14 +129,21 @@ npm run build:landing
 npm run preview --workspace=landing
 ```
 
-### Backend → Amvera / Timeweb Cloud
+### Backend → Amvera
 
 1. Создайте проект на [amvera.ru](https://amvera.ru)
-2. Укажите переменные из `backend/.env.example`
-3. Используйте `backend/Dockerfile` или `backend/amvera.yml`
-4. Webhook ЮKassa: `https://api.clickjurist.ru/api/v1/payments/webhook`
+2. **Подключите GitHub** → репозиторий `markmus11012020-max/ClickJurist` (ветка `main`)
+3. **Не загружайте вручную только папку backend** — нужен весь monorepo (корневой `package.json`, `shared/`, `backend/`)
+4. Amvera подхватит корневой `amvera.yaml` → сборка через `backend/Dockerfile`
+5. **Порт:** `3001` (в настройках приложения)
+6. **Переменные окружения** (из `backend/.env.example`):
+   - `OPENROUTER_API_KEY`
+   - `PORT=3001`
+   - `NODE_ENV=production`
+   - `ALLOWED_ORIGINS=https://clickjurist.ru,https://www.clickjurist.ru`
+7. Webhook ЮKassa: `https://ВАШ-ДОМЕН.amvera.io/api/v1/payments/webhook`
 
-Docker локально:
+Docker локально (из корня репо):
 ```bash
 docker build -f backend/Dockerfile -t clickjurist-api .
 docker run -p 3001:3001 --env-file backend/.env clickjurist-api

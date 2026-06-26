@@ -1,0 +1,6 @@
+# Сборка из корня monorepo (нужны package.json, shared/, backend/)
+build:
+  dockerfile: backend/Dockerfile
+
+run:
+  containerPort: 3001

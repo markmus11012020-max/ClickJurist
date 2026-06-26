@@ -1,0 +1,12 @@
+node_modules
+.git
+.expo
+mobile
+landing
+dist
+*.md
+.env
+.env.*
+!.env.example
+api.txt
+апи.txt
