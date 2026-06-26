@@ -1,4 +1,6 @@
-# Сборка из корня monorepo (нужны package.json, shared/, backend/)
+# Деплой backend на Amvera: Root Directory = backend
+# См. backend/amvera.yaml
+
 build:
   dockerfile: backend/Dockerfile
 

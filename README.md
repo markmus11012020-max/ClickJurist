@@ -131,23 +131,19 @@ npm run preview --workspace=landing
 
 ### Backend → Amvera
 
+**Важно:** Amvera должна получать **всю папку `backend/`** или GitHub-репозиторий с Root Directory = `backend`. Не загружайте вручную 2–3 файла.
+
 1. Создайте проект на [amvera.ru](https://amvera.ru)
-2. **Подключите GitHub** → репозиторий `markmus11012020-max/ClickJurist` (ветка `main`)
-3. **Не загружайте вручную только папку backend** — нужен весь monorepo (корневой `package.json`, `shared/`, `backend/`)
-4. Amvera подхватит корневой `amvera.yaml` → сборка через `backend/Dockerfile`
-5. **Порт:** `3001` (в настройках приложения)
-6. **Переменные окружения** (из `backend/.env.example`):
+2. **GitHub** → `markmus11012020-max/ClickJurist`, ветка `main`
+3. **Root Directory / Корневая папка:** `backend`
+4. Конфиг: `backend/amvera.yaml` → Docker, порт **3001**
+5. **Переменные окружения:**
    - `OPENROUTER_API_KEY`
    - `PORT=3001`
    - `NODE_ENV=production`
    - `ALLOWED_ORIGINS=https://clickjurist.ru,https://www.clickjurist.ru`
-7. Webhook ЮKassa: `https://ВАШ-ДОМЕН.amvera.io/api/v1/payments/webhook`
 
-Docker локально (из корня репо):
-```bash
-docker build -f backend/Dockerfile -t clickjurist-api .
-docker run -p 3001:3001 --env-file backend/.env clickjurist-api
-```
+Если используете встроенный Git Amvera — удалите старый проект и создайте новый с GitHub (коммит должен быть свежим, не `e17c97e`).
 
 ### Mobile → App Store / Google Play
 

@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { ConsultationRequest } from '@clickjurist/shared';
+import { ConsultationRequest } from '../shared';
 import { runAiCascade } from '../services/aiCascade';
 
 const router = Router();

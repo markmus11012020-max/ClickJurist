@@ -4,7 +4,7 @@ import {
   DocumentType,
   USER_ROLE_LABELS,
   WizardFormData,
-} from '@clickjurist/shared';
+} from '../shared';
 import { config } from '../config';
 import {
   buildUserPrompt,
