@@ -14,21 +14,36 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "ru.clickjurist.app"
+      "bundleIdentifier": "ru.clickjurist.app",
+      "associatedDomains": ["applinks:clickjurist.ru"]
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0F172A"
       },
-      "package": "ru.clickjurist.app"
+      "package": "ru.clickjurist.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "clickjurist.ru",
+              "pathPrefix": "/"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
     "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
-      "apiUrl": "http://localhost:3001",
+      "apiUrl": "https://api.clickjurist.ru",
       "eas": {
         "projectId": "YOUR_EAS_PROJECT_ID"
       }
