@@ -15,6 +15,14 @@ app.use(
 );
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.json({
+    service: 'CLICK JURIST API',
+    health: '/health',
+    api: '/api/v1',
+  });
+});
+
 app.get('/health', (_req, res) => {
   const status = getConfigStatus();
   res.json({
@@ -42,6 +50,6 @@ if (!status.ready) {
   status.missing.forEach((item) => console.warn(`   → ${item}`));
 }
 
-app.listen(config.port, () => {
-  console.log(`CLICK JURIST API → http://localhost:${config.port}`);
+app.listen(config.port, '0.0.0.0', () => {
+  console.log(`CLICK JURIST API → http://0.0.0.0:${config.port}`);
 });
